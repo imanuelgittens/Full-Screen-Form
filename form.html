@@ -24,13 +24,13 @@
             </a>
           </div>
         </div>
-        <form>
-          <ul>
-            <li>
+        <form id="websiteForm">
+          <ul class="form-inputs">
+            <li class="step-one active">
               <label>What's your name?</label>
               <input type="text" placeholder="Imanuel Gittens"  required/>
             </li>
-            <li>
+            <li class="step-two">
               <label>What's your Email Address?</label>
               <input type="email" placeholder="name@email.com"  required/>
             </li>
@@ -105,7 +105,7 @@
             </ul>
           </div>
           <div class="continue">
-            <button class="next">Continue</button>
+            <button class="next" onclick="addActiveClass()">Continue</button>
           </div>
         </div>
       </div>
