@@ -36,12 +36,28 @@
             </li>
             <li>
               <label>What's your priority for your new website?</label>
-              <input type="radio" name="websitePriority" required/>
-              <input type="radio" name="websitePriority" required/>
-              <input type="radio" name="websitePriority" required/>
+              <div class="web-priority">
+                <label for="conversion"><img src="images/conversion.svg" /></label>
+                <input type="radio" name="websitePriority" id="conversion" required/>
+                <label for="social"><img src="images/social.svg" /></label>
+                <input type="radio" name="websitePriority" id="social" required/>
+                <label for="mobile"><img src="images/mobile.svg" /></label>
+                <input type="radio" name="websitePriority" id="mobile" required/>
+              </div>
             </li>
             <li>
               <label>Choose a color for your website.</label>
+              <div class="choose-color">
+                <div class="placeholder" id="colorChoices">
+                  <div class="color">
+                    <!-- placeholder color show here -->
+                  </div>
+                  <div class="color-code">
+                    <span>#999999</span>
+                  </div>
+                </div>
+
+              </div>
               <select>
                 <option value="#588c75"></option>
                 <option value="#b0c47f"></option>
@@ -67,14 +83,79 @@
             </li>
             <li>
               <label>Describe how you imagine your new website.</label>
-              <textarea></textarea>
+              <textarea rows="4"></textarea>
             </li>
             <li>
               <label>What's your Budget?</label>
-              <input type="text" placeholder="1000"  required/>
+              <input type="text" placeholder="$1000.00"  required/>
             </li>
           </ul>
         </form>
+
+        <div class="color-listing" id="colorListing">
+          <ul>
+            <li class="color-thumb" data-value="#588c75">
+              <span>#588c75</span>
+            </li>
+            <li class="color-thumb" data-value="#b0c47f">
+              <span>#b0c47f</span>
+            </li>
+            <li class="color-thumb" data-value="#f3e395">
+              <span>#f3e395</span>
+            </li>
+            <li class="color-thumb" data-value="#f3ae73">
+              <span>#f3ae73</span>
+            </li>
+            <li class="color-thumb" data-value="#da645a">
+              <span>#da645a</span>
+            </li>
+            <li class="color-thumb" data-value="#79a38f">
+              <span>#79a38f</span>
+            </li>
+            <li class="color-thumb" data-value="#c1d099">
+              <span>#c1d099</span>
+            </li>
+            <li class="color-thumb" data-value="#f5eaaa">
+              <span>#f5eaaa</span>
+            </li>
+            <li class="color-thumb" data-value="#f5be8f">
+              <span>#f5be8f</span>
+            </li>
+            <li class="color-thumb" data-value="#e1837b">
+              <span>#e1837b</span>
+            </li>
+            <li class="color-thumb" data-value="#9bbaab">
+              <span>#9bbaab</span>
+            </li>
+            <li class="color-thumb" data-value="#d1dcb2">
+              <span>#d1dcb2</span>
+            </li>
+            <li class="color-thumb" data-value="#f9eec0">
+              <span>#f9eec0</span>
+            </li>
+            <li class="color-thumb" data-value="#f7cda9">
+              <span>#f7cda9</span>
+            </li>
+            <li class="color-thumb" data-value="#e8a19b">
+              <span>#e8a19b</span>
+            </li>
+            <li class="color-thumb" data-value="#bdd1c8">
+              <span>#bdd1c8</span>
+            </li>
+            <li class="color-thumb" data-value="#e1e7cd">
+              <span>#e1e7cd</span>
+            </li>
+            <li class="color-thumb" data-value="#faf4d4">
+              <span>#faf4d4</span>
+            </li>
+            <li class="color-thumb" data-value="#fbdfc9">
+              <span>#fbdfc9</span>
+            </li>
+            <li class="color-thumb" data-value="#f1c1bd">
+              <span>#f1c1bd</span>
+            </li>
+          </ul>
+        </div>
 
         <div class="form-controls">
           <div class="progress-count">
