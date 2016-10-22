@@ -17,6 +17,11 @@ a{
   text-decoration: none;
 }
 
+ul,ol,li{
+  padding:0;
+  margin: 0;
+}
+
 body{
   padding:0;
   margin: 0;
@@ -25,7 +30,7 @@ body{
 
 /*End Utility Classes*/
 
-/*Form Styles*/
+
 
 .formWrapper{
   width:100%;
@@ -33,7 +38,10 @@ body{
   position: relative;
   background-color: #3b3f45;
   color:#fff;
+  overflow: auto;
 }
+
+/*End Form Title Styles*/
 
 .title{
   padding: 40px;
@@ -48,7 +56,7 @@ body{
 }
 
 .title-icons a{
-  color:#333;
+  color:#222;
   padding:10px;
   font-size: 22px;
   position: relative;
@@ -71,5 +79,67 @@ body{
   padding:10px;
   width:300px;
   font-weight: 700;
+}
+/*End Form Title Styles*/
 
+/*Form Styles*/
+
+/*End Form Style*/
+
+/*Form controls styles*/
+
+.form-controls{
+  position: absolute;
+  right: 0;
+  top:0;
+  padding:40px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.progress-count{
+  text-align: center;
+}
+
+.progress-count span{
+  font-size:35px;
+  color:#222;
+  font-weight:700;
+}
+
+.progress-count span.separator{
+  color: #333;
+  font-weight: 400;
+}
+
+.progress-thumbs{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.progress-thumbs ul{
+  list-style-type: none;
+}
+
+.progress-thumbs ul li{
+  text-align: center;
+  padding: 7px 5px;
+  color:#32363B;
+}
+
+.continue button{
+  background-color: transparent;
+  padding:15px 40px;
+  border: 3px solid #222;
+  color:#222;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight:700;
+}
+
+.continue button:hover{
+  cursor: pointer;
+  background-color: #222;
+  color:#fff;
 }
