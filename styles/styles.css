@@ -1,0 +1,75 @@
+/*Utility Classes*/
+
+*{
+  box-sizing: border-box;
+}
+
+.container{
+  height:100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+  padding:0;
+  margin:0;
+}
+
+a{
+  text-decoration: none;
+}
+
+body{
+  padding:0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/*End Utility Classes*/
+
+/*Form Styles*/
+
+.formWrapper{
+  width:100%;
+  height: 100%;
+  position: relative;
+  background-color: #3b3f45;
+  color:#fff;
+}
+
+.title{
+  padding: 40px;
+}
+
+.title h1{
+  font-size: 2em;
+}
+
+.title-icons{
+  margin-top: 20px;
+}
+
+.title-icons a{
+  color:#333;
+  padding:10px;
+  font-size: 22px;
+  position: relative;
+}
+
+.title-icons span{
+  display:none;
+  color:#888;
+  font-size: 14px;
+}
+
+.title-icons a:hover{
+  color: #fff;
+}
+
+.title-icons a:hover > span{
+  display: block;
+  position: absolute;
+  left: 0;
+  padding:10px;
+  width:300px;
+  font-weight: 700;
+
+}
