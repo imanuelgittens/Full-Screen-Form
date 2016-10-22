@@ -2,6 +2,24 @@
 
 *{
   box-sizing: border-box;
+  outline: none;
+}
+
+
+input::-webkit-input-placeholder{
+  color:#35383E;
+}
+
+input::-moz-placeholder{
+  color:#35383E;
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+color: #35383E;
+}
+
+input::-ms-input-placeholder{
+  color:#35383E;
 }
 
 .container{
@@ -20,6 +38,13 @@ a{
 ul,ol,li{
   padding:0;
   margin: 0;
+}
+
+input{
+  border:none;
+  background-color: transparent;
+  line-height:36px;
+
 }
 
 body{
@@ -41,7 +66,7 @@ body{
   overflow: auto;
 }
 
-/*End Form Title Styles*/
+/*Form Title Styles*/
 
 .title{
   padding: 40px;
@@ -83,6 +108,41 @@ body{
 /*End Form Title Styles*/
 
 /*Form Styles*/
+
+ul.form-inputs{
+  list-style-type: none;
+}
+
+.form-inputs li{
+  position: absolute;
+  top:-5000px;
+  left: 20%;
+  transition: 2s;
+}
+
+.form-inputs li.active{
+  top:40%;
+  width:60%;
+  margin-left:auto;
+  margin-right: auto;
+}
+
+.form-inputs li label{
+  display: block;
+  font-size:36px;
+  font-weight:900;
+  margin-bottom: 20px;
+}
+
+.form-inputs input[type="text"], input[type="email"]{
+  padding: 10px 0;
+  font-size:50px;
+  color: #fff;
+  border-bottom:2px solid #333;
+  width:100%;
+  font-weight: bold;
+}
+
 
 /*End Form Style*/
 
