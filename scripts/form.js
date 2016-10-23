@@ -55,9 +55,10 @@ function validateName(){
 
 function validateEmail(){
   var email = document.querySelector('#email');
-  var isValid = isEmailAddress(email.value);
+
   var result = false;
-  if(email){
+  if(email.value){
+    var isValid = isEmailAddress(email.value);
     if(isValid){
       result = true;
     }
