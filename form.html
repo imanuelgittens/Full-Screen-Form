@@ -38,15 +38,15 @@
               <label>What's your priority for your new website?</label>
               <div class="web-priority">
                 <div>
-                  <input type="radio" name="websitePriority" id="conversion" value="conversion" required checked/>
+                  <input type="radio" name="websitePriority" class="priority" id="conversion" value="conversion" required checked/>
                   <label for="conversion"><img src="images/conversion.svg" /></label>
                 </div>
                 <div>
-                  <input type="radio" name="websitePriority" id="social" value="social" required/>
+                  <input type="radio" name="websitePriority" class="priority" id="social" value="social" required/>
                   <label for="social"><img src="images/social.svg" /></label>
                 </div>
                 <div>
-                  <input type="radio" name="websitePriority" id="mobile" value="mobile" required/>
+                  <input type="radio" name="websitePriority" class="priority" id="mobile" value="mobile" required/>
                   <label for="mobile"><img src="images/mobile.svg" /></label>
                 </div>
               </div>
@@ -184,28 +184,37 @@
               <div class="inputSection">
                 <label>What's your priority for your new website?</label>
                 <div class="web-priority">
-                  <label for="conversion"><img src="images/conversion.svg" /></label>
-                  <input type="radio" name="websitePriority" id="conversion" required/>
-                  <label for="social"><img src="images/social.svg" /></label>
-                  <input type="radio" name="websitePriority" id="social" required/>
-                  <label for="mobile"><img src="images/mobile.svg" /></label>
-                  <input type="radio" name="websitePriority" id="mobile" required/>
+                  <div>
+                    <input type="radio" name="reviewWebsitePriority"  class="reviewPriorities" id="reviewConversion" value="conversion" required/>
+                    <label for="reviewConversion"><img src="images/conversion.svg" /></label>
+                  </div>
+
+                  <div>
+                    <input type="radio" name="reviewWebsitePriority" class="reviewPriorities" id="reviewSocial" value="social" required/>
+                    <label for="reviewSocial"><img src="images/social.svg" /></label>
+                  </div>
+                  <div>
+                    <input type="radio" name="reviewWebsitePriority" class="reviewPriorities" id="reviewMobile" value="mobile" required/>
+                    <label for="reviewMobile"><img src="images/mobile.svg" /></label>
+                  </div>
+
+
                 </div>
               </div>
               <div class="inputSection">
                 <label>Choose a color for your website.</label>
                 <div class="choose-color">
-                  <div class="placeholder" id="colorChoices">
+                  <div class="placeholder" id="reviewColorChoices">
                     <div class="color">
                       <!-- placeholder color show here -->
                     </div>
                     <div class="color-code">
-                      <span>#999999</span>
+                      <span></span>
                     </div>
                   </div>
 
                 </div>
-                <select id="websiteColor">
+                <select id="reviewWebsiteColor">
                   <option value="#588c75">#588c75</option>
                   <option value="#b0c47f">#b0c47f</option>
                   <option value="#f3e395">#f3e395</option>
@@ -230,11 +239,11 @@
               </div>
               <div class="inputSection">
                 <label>Describe how you imagine your new website.</label>
-                <textarea rows="4"></textarea>
+                <textarea rows="4" id="reviewDesc"></textarea>
               </div>
               <div class="inputSection">
                 <label>What's your Budget?</label>
-                <input type="text" placeholder="$1000.00"  required/>
+                <input type="text" id="reviewBudget" required/>
               </div>
 
               <div class="inputSection">

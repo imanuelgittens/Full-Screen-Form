@@ -5,6 +5,24 @@ var answers = {};
 
 // console.log(colorButton);
 
+function reviewValues(){
+  setReviewColorPlaceholderBackground();
+  var formReview = document.querySelector('#review');
+  formReview.querySelector('#reviewName').value = answers.questionOne;
+  formReview.querySelector('#reviewEmail').value = answers.questionTwo;
+  var websitePriorities = formReview.getElementsByClassName('reviewPriorities');
+  console.log(websitePriorities);
+  for(var i = 0; i < websitePriorities.length; i++){
+    if (websitePriorities[i].value === answers.questionThree){
+      websitePriorities[i].setAttribute('checked', 'checked');
+    }
+
+  }
+  formReview.querySelector('#reviewColorChoices').value = answers.questionFour;
+  formReview.querySelector('#reviewDesc').value = answers.questionFive;
+  formReview.querySelector('#reviewBudget').value = answers.questionSix;
+}
+
 
 function formNavigation() {
   //find current active element
@@ -22,6 +40,7 @@ function formNavigation() {
          }else{
           //  When we have no more questions we show the review page.
            var formReview = document.querySelector('#review');
+           reviewValues();
            formReview.style.top = 0;
           console.log('Done');
         }
@@ -39,6 +58,7 @@ function formNavigation() {
            item.nextElementSibling.classList.add('active');
          }else{
           //  When we have no more questions we show the review page.
+           reviewValues();
            var formReview = document.querySelector('#review');
            formReview.style.top = 0;
           console.log('Done');
@@ -49,13 +69,21 @@ function formNavigation() {
   }
 
   if (item.querySelector('.web-priority') !== null) {
-    answers.questionThree = item.querySelector('.web-priority input[name=websitePriority]').value;
+    var choices = item.getElementsByClassName('priority');
+    console.log(choices);
+    for(var i = 0; i < choices.length; i++){
+      if(choices[i].checked){
+        answers.questionThree = choices[i].value;
+      }
+    }
+    
     item.classList.remove('active');
     // Check if another list element (question) exists
     if (item.nextElementSibling){
       item.nextElementSibling.classList.add('active');
     }else{
      //  When we have no more questions we show the review page.
+      reviewValues();
       var formReview = document.querySelector('#review');
       formReview.style.top = 0;
       console.log('Done');
@@ -71,6 +99,7 @@ function formNavigation() {
       item.nextElementSibling.classList.add('active');
     }else{
      //  When we have no more questions we show the review page.
+      reviewValues();
       var formReview = document.querySelector('#review');
       formReview.style.top = 0;
       console.log('Done');
@@ -87,6 +116,7 @@ function formNavigation() {
            item.nextElementSibling.classList.add('active');
          }else{
           //  When we have no more questions we show the review page.
+           reviewValues();
            var formReview = document.querySelector('#review');
            formReview.style.top = 0;
           console.log('Done');
@@ -105,6 +135,7 @@ function formNavigation() {
            item.nextElementSibling.classList.add('active');
          }else{
           //  When we have no more questions we show the review page.
+           reviewValues();
            var formReview = document.querySelector('#review');
            formReview.style.top = 0;
           console.log('Done');
@@ -160,6 +191,13 @@ function setColorPlaceholderBackground(){
   var colorLabel = document.querySelector('#colorChoices .color-code span');
   placeholder.style.background = colorOptions.value;
   colorLabel.innerHTML = colorOptions.value;
+}
+
+function setReviewColorPlaceholderBackground(){
+  var placeholder = document.querySelector('#reviewColorChoices .color');
+  var colorLabel = document.querySelector('#reviewColorChoices .color-code span');
+  placeholder.style.background = answers.questionFour;
+  colorLabel.innerHTML = answers.questionFour;
 }
 
 setColorPlaceholderBackground();

@@ -22,6 +22,22 @@ input::-ms-input-placeholder{
   color:#35383E;
 }
 
+/*.form-review input::-webkit-input-placeholder{
+  color:#E6E5C3;
+}
+
+.form-review input::-moz-placeholder{
+  color:#E6E5C3;
+}
+
+.form-review input:-moz-placeholder {
+color: #E6E5C3;
+}
+
+.form-review input::-ms-input-placeholder{
+  color:#E6E5C3;
+}*/
+
 .container{
   height:100%;
 }
@@ -119,12 +135,12 @@ ul.form-inputs{
   list-style-type: none;
 }
 
-/*.form-inputs li{
+.form-inputs li{
   position: absolute;
   top:-5000px;
   left: 20%;
   transition: 1s;
-}*/
+}
 
 .form-inputs li.active{
   top:40%;
@@ -252,12 +268,13 @@ div.choose-color .placeholder .color-code{
 /*Form Review Styles*/
 
 div.form-review{
-  /*position: absolute;*/
-  /*top: -5000px;*/
+  position: absolute;
+  top: -5000px;
   background-color: #FFFFD4;
   z-index: 2001;
   width:100%;
   overflow: auto;
+  transition: 1s;
 }
 
 div.form-review h1{
@@ -285,17 +302,54 @@ div.form-review input[type="text"], input[type="email"], textarea{
   font-size:50px;
   color: #858469;
   border-bottom:2px solid #E6E5C3;
-
+  margin-bottom:20px;
   width:100%;
   font-weight: bold;
 }
 
 div.form-review input[type="radio"]{
   display: none;
+  margin-bottom:20px;
+}
+
+div.form-review .web-priority div{
+  display: inline-block;
+
 }
 
 div.form-review .web-priority label{
-  display: inline-block;
+  opacity: 0.5;
+}
+
+div.form-review input[type="radio"]:checked ~ label{
+  opacity: 1;
+}
+
+
+
+div.form-review input[type="submit"]{
+  margin-top: 20px;
+  margin-bottom: 60px;
+  float: right;
+  line-height: normal;
+  background-color: transparent;
+  padding:15px 40px;
+  border: 3px solid #222;
+  color:#222;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight:700;
+}
+
+div.form-review select{
+ margin-bottom:20px;
+ display: none;
+}
+
+div.form-review input[type="submit"]:hover{
+  cursor: pointer;
+  background-color: #222;
+  color:#fff;
 }
 
 /*End form review styles*/
