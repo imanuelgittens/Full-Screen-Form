@@ -26,40 +26,49 @@
         </div>
         <form id="websiteForm">
           <ul class="form-inputs">
-            <li class="step-one active">
+            <li class="question-one active">
               <label>What's your name?</label>
-              <input type="text" placeholder="Imanuel Gittens"  required/>
+              <input type="text" placeholder="Imanuel Gittens" id="fullName"  required/>
             </li>
-            <li class="step-two">
+            <li class="question-two">
               <label>What's your Email Address?</label>
-              <input type="email" placeholder="name@email.com"  required/>
+              <input type="email" placeholder="name@email.com"  id="email" required/>
             </li>
-            <li>
+            <li class="question-three">
               <label>What's your priority for your new website?</label>
               <div class="web-priority">
-                <label for="conversion"><img src="images/conversion.svg" /></label>
-                <input type="radio" name="websitePriority" id="conversion" required/>
-                <label for="social"><img src="images/social.svg" /></label>
-                <input type="radio" name="websitePriority" id="social" required/>
-                <label for="mobile"><img src="images/mobile.svg" /></label>
-                <input type="radio" name="websitePriority" id="mobile" required/>
+                <div>
+                  <input type="radio" name="websitePriority" id="conversion" value="conversion" required checked/>
+                  <label for="conversion"><img src="images/conversion.svg" /></label>
+                </div>
+                <div>
+                  <input type="radio" name="websitePriority" id="social" value="social" required/>
+                  <label for="social"><img src="images/social.svg" /></label>
+                </div>
+                <div>
+                  <input type="radio" name="websitePriority" id="mobile" value="mobile" required/>
+                  <label for="mobile"><img src="images/mobile.svg" /></label>
+                </div>
               </div>
             </li>
-            <li>
+            <li class="question-four">
               <label>Choose a color for your website.</label>
               <div class="choose-color">
                 <div class="placeholder" id="colorChoices">
                   <div class="color">
-                    <!-- placeholder color show here -->
+                    <!-- placeholder color shows here -->
                   </div>
                   <div class="color-code">
-                    <span>#999999</span>
+                    <span>
+                      <!-- placeholder color code shows here -->
+                    </span>
                   </div>
                 </div>
 
               </div>
+
               <select id="websiteColor">
-                <option value="#588c75">#588c75</option>
+                <option value="#588c75" selected>#588c75</option>
                 <option value="#b0c47f">#b0c47f</option>
                 <option value="#f3e395">#f3e395</option>
                 <option value="#f3ae73">#f3ae73</option>
@@ -80,18 +89,19 @@
                 <option value="#fbdfc9">#fbdfc9</option>
                 <option value="#f1c1bd">#f1c1bd</option>
               </select>
+
             </li>
-            <li>
+            <li class="question-five">
               <label>Describe how you imagine your new website.</label>
-              <textarea rows="4"></textarea>
+              <textarea rows="4" id="websiteDesc"></textarea>
             </li>
-            <li>
+            <li class="question-six">
               <label>What's your Budget?</label>
-              <input type="text" placeholder="$1000.00"  required/>
+              <input type="text" placeholder="$1000.00"  id="budget" required/>
             </li>
           </ul>
         </form>
-
+        <!-- List of colors -->
         <div class="color-listing" id="colorListing">
           <ul>
             <li class="color-thumb" data-value="#588c75">
@@ -158,7 +168,86 @@
         </div>
 
         <div class="form-review" id="review">
-          <h1>This is the review page!</h1>
+          <div class="reviewWrapper">
+            <h1>Review and Submit</h1>
+
+            <form id="review">
+
+              <div class="inputSection">
+                <label for="reviewName">What's your name?</label>
+                <input type="text" name="name" id="reviewName">
+              </div>
+              <div class="inputSection">
+                <label for="reviewEmail">What's your Email Address?</label>
+                <input type="email" name="email" id="reviewEmail">
+              </div>
+              <div class="inputSection">
+                <label>What's your priority for your new website?</label>
+                <div class="web-priority">
+                  <label for="conversion"><img src="images/conversion.svg" /></label>
+                  <input type="radio" name="websitePriority" id="conversion" required/>
+                  <label for="social"><img src="images/social.svg" /></label>
+                  <input type="radio" name="websitePriority" id="social" required/>
+                  <label for="mobile"><img src="images/mobile.svg" /></label>
+                  <input type="radio" name="websitePriority" id="mobile" required/>
+                </div>
+              </div>
+              <div class="inputSection">
+                <label>Choose a color for your website.</label>
+                <div class="choose-color">
+                  <div class="placeholder" id="colorChoices">
+                    <div class="color">
+                      <!-- placeholder color show here -->
+                    </div>
+                    <div class="color-code">
+                      <span>#999999</span>
+                    </div>
+                  </div>
+
+                </div>
+                <select id="websiteColor">
+                  <option value="#588c75">#588c75</option>
+                  <option value="#b0c47f">#b0c47f</option>
+                  <option value="#f3e395">#f3e395</option>
+                  <option value="#f3ae73">#f3ae73</option>
+                  <option value="#da645a">#da645a</option>
+                  <option value="#79a38f">#79a38f</option>
+                  <option value="#c1d099">#c1d099</option>
+                  <option value="#f5eaaa">#f5eaaa</option>
+                  <option value="#f5be8f">#f5be8f</option>
+                  <option value="#e1837b">#e1837b</option>
+                  <option value="#9bbaab">#9bbaab</option>
+                  <option value="#d1dcb2">#d1dcb2</option>
+                  <option value="#f9eec0">#f9eec0</option>
+                  <option value="#f7cda9">#f7cda9</option>
+                  <option value="#e8a19b">#e8a19b</option>
+                  <option value="#bdd1c8">#bdd1c8</option>
+                  <option value="#e1e7cd">#e1e7cd</option>
+                  <option value="#faf4d4">#faf4d4</option>
+                  <option value="#fbdfc9">#fbdfc9</option>
+                  <option value="#f1c1bd">#f1c1bd</option>
+                </select>
+              </div>
+              <div class="inputSection">
+                <label>Describe how you imagine your new website.</label>
+                <textarea rows="4"></textarea>
+              </div>
+              <div class="inputSection">
+                <label>What's your Budget?</label>
+                <input type="text" placeholder="$1000.00"  required/>
+              </div>
+
+              <div class="inputSection">
+
+                <input type="submit" value="Send Answers"/>
+              </div>
+
+
+
+            </form>
+          </div>
+
+
         </div>
 
         <div class="form-controls">
@@ -190,7 +279,7 @@
             </ul>
           </div>
           <div class="continue">
-            <button class="next" onclick="addActiveClass()">Continue</button>
+            <button class="next" onclick="formNavigation()">Continue</button>
           </div>
         </div>
       </div>
