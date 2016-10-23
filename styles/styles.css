@@ -398,3 +398,37 @@ div.form-review input[type="submit"]:hover{
   background-color: #222;
   color:#fff;
 }
+
+/*Thank you page styles*/
+
+.thankyouWrapper{
+  width:100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color:#fff;
+  text-align: center;
+  background-color: #3B3F45;
+}
+
+.restart{
+  background-color: transparent;
+  padding:15px 40px;
+  border: 3px solid #222;
+  color:#222;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight:700;
+}
+
+.restart:hover{
+  cursor: pointer;
+  background-color: #222;
+  color:#fff;
+}
