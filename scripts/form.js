@@ -117,6 +117,7 @@ function formNavigation() {
           // console.log('Done');
         }
     }else{
+
       item.querySelector('#email').classList.add('required');
     }
   }
@@ -220,12 +221,17 @@ function validateName(){
 }
 
 function validateEmail(){
-  var name = document.querySelector('#email');
-  if(email.value){
-    return true;
-  }else{
-    return false;
+  var email = document.querySelector('#email');
+  console.log(email.value);
+  var isValid = isEmailAddress(email.value);
+  var result = false;
+  if(email){
+    if(isValid){
+      result = true;
+    }
   }
+
+  return result;
 }
 
 function validateDesc(){
@@ -386,6 +392,36 @@ navSix.addEventListener('click', function(){
         }
 });
 
+function isEmailAddress(input){
+
+		if(!input){
+			throw "Missing Parameter in isEmailAddress function: 'input'.";
+		}
+
+		if(input.indexOf("@") < 1){
+			return false;
+		}
+
+		var emailParts = input.split('@');
+		var domain = emailParts[1];
+
+
+		if(emailParts.length > 2){
+			return false;
+		}
+
+		if(domain.indexOf('.') == -1){
+			return false;
+		}else{
+			var domainParts = domain.split('.');
+			var extension = domainParts[1];
+			if(extension.length < 2){
+				return false;
+			}
+		}
+
+		return true;
+	}
 
 function handleColorClick(event){
 		event = event || window.event;
