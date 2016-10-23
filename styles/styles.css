@@ -22,22 +22,6 @@ input::-ms-input-placeholder{
   color:#35383E;
 }
 
-/*.form-review input::-webkit-input-placeholder{
-  color:#E6E5C3;
-}
-
-.form-review input::-moz-placeholder{
-  color:#E6E5C3;
-}
-
-.form-review input:-moz-placeholder {
-color: #E6E5C3;
-}
-
-.form-review input::-ms-input-placeholder{
-  color:#E6E5C3;
-}*/
-
 .container{
   height:100%;
 }
@@ -163,6 +147,10 @@ ul.form-inputs{
   border-bottom:2px solid #333;
   width:100%;
   font-weight: bold;
+}
+
+#email{
+  color:#fff;
 }
 
 .form-inputs textarea{

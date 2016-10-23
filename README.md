@@ -1,7 +1,3 @@
-#Hello  
+#README
 
-> This is a test
-
-Hi There in h2
-
-**bold**
+This project shows a fullscreen form interface.
