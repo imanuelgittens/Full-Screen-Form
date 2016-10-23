@@ -175,10 +175,8 @@ ul.form-inputs{
 }
 
  div.color-listing{
-  position: absolute;
+  position: fixed;
   top: -5000px;
-  width: 100%;
-  height: 100%;
   display: block;
   overflow: auto;
   background-color: #3B3F45;
@@ -276,6 +274,7 @@ div.form-review{
   overflow: auto;
   transition: 1s;
 }
+
 
 div.form-review h1{
   color: #3A4348;

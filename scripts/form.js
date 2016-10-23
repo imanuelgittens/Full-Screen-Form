@@ -1,9 +1,15 @@
 
 var colorButton = document.querySelector('#colorChoices');
+var reviewColorButton = document.querySelector('#reviewColorChoices');
+var finishButton = document.querySelector('#finish');
 
 var answers = {};
 
 // console.log(colorButton);
+function submitData(){
+
+}
+
 
 function reviewValues(){
   setReviewColorPlaceholderBackground();
@@ -70,13 +76,13 @@ function formNavigation() {
 
   if (item.querySelector('.web-priority') !== null) {
     var choices = item.getElementsByClassName('priority');
-    console.log(choices);
+
     for(var i = 0; i < choices.length; i++){
       if(choices[i].checked){
         answers.questionThree = choices[i].value;
       }
     }
-    
+
     item.classList.remove('active');
     // Check if another list element (question) exists
     if (item.nextElementSibling){
@@ -221,7 +227,49 @@ colorButton.addEventListener('click', function showColors(){
   var choices = document.querySelector('#colorListing');
   choices.style.top = 0;
   choices.style.left = 0;
+  choices.style.right = 0;
+  choices.style.bottom = 0;
 });
+
+reviewColorButton.addEventListener('click', function showReviewColors(){
+
+  var choices = document.querySelector('#colorListing');
+  console.log(choices);
+  choices.style.top = 0;
+  choices.style.left = 0;
+  choices.style.right = 0;
+  choices.style.bottom = 0;
+  choices.style.zIndex = 3000;
+});
+
+function saveData(event){
+  event.preventDefault();
+  event = event || window.event;
+  event.target = event.target || event.srcElement;
+  var element = event.target;
+
+  console.log(element.id);
+  if(element.id === 'review'){
+    var reviewForm = document.querySelector('#review');
+    answers.questionOne = reviewForm.querySelector('#reviewName').value;
+    answers.questionTwo = reviewForm.querySelector('#reviewEmail').value;
+    var reviewPriorities = reviewForm.getElementsByClassName('reviewPriorities');
+
+    for(var i = 0; i < reviewPriorities.length; i++){
+      if(reviewPriorities[i].checked){
+        answers.questionThree = reviewPriorities[i].value;
+      }
+    }
+
+    answers.questionFour = reviewForm.querySelector('#reviewWebsiteColor').value;
+    answers.questionFive = reviewForm.querySelector('#reviewDesc').value;
+    answers.questionSix = reviewForm.querySelector('#reviewBudget').value;
+    alert(answers);
+    window.location = "thankyou.html";
+  }
+  // var reviewForm = document.querySelector('#review');
+
+}
 
 function handleColorClick(event){
 		event = event || window.event;
@@ -236,8 +284,33 @@ function handleColorClick(event){
       var choices = document.querySelector('#colorListing');
       choices.style.top = '-5000px';
       choices.style.left = 0;
+      choices.style.bottom = null;
+      choices.style.right = null;
       // console.log(selectVal.value);
     }
 	}
 
+  function handleReviewColorClick(event){
+
+  		event = event || window.event;
+  		event.target = event.target || event.srcElement;
+  		var element = event.target;
+
+      if(element.className === 'color-thumb') {
+        var result = element.getAttribute('data-value');
+        var selectVal = document.querySelector('#reviewWebsiteColor');
+        selectVal.value = result;
+        answers.questionFour = selectVal.value;
+        setReviewColorPlaceholderBackground();
+        var choices = document.querySelector('#colorListing');
+        choices.style.top = '-5000px';
+        choices.style.left = 0;
+        choices.style.bottom = null;
+        choices.style.right = null;
+        // console.log(selectVal.value);
+      }
+  	}
+
+  document.addEventListener('submit', saveData, true);
   document.addEventListener('click', handleColorClick, true);
+  document.addEventListener('click', handleReviewColorClick, true);
