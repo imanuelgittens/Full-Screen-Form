@@ -3,13 +3,50 @@ var colorButton = document.querySelector('#colorChoices');
 var reviewColorButton = document.querySelector('#reviewColorChoices');
 var finishButton = document.querySelector('#finish');
 
+var navOne = document.querySelector('.progress-thumbs .first label');
+var navTwo = document.querySelector('.progress-thumbs .second label');
+var navThree = document.querySelector('.progress-thumbs .third label');
+var navFour = document.querySelector('.progress-thumbs .fourth label');
+var navFive = document.querySelector('.progress-thumbs .fifth label');
+var navSix = document.querySelector('.progress-thumbs .sixth label');
+
 var answers = {};
 
 // console.log(colorButton);
-function submitData(){
 
+function updateSideNavigation(){
+  var first = document.querySelector('.progress-thumbs .first label');
+  var second = document.querySelector('.progress-thumbs .second label');
+  var third = document.querySelector('.progress-thumbs .third label');
+  var fourth = document.querySelector('.progress-thumbs .fourth label');
+  var fifth = document.querySelector('.progress-thumbs .fifth label');
+  var sixth = document.querySelector('.progress-thumbs .sixth label');
+
+  if(answers.questionOne){
+    first.style.color = '#222';
+    first.style.cursor = 'pointer';
+  }
+  if(answers.questionTwo){
+    second.style.color = '#222';
+    second.style.cursor = 'pointer';
+  }
+  if(answers.questionThree){
+    third.style.color = '#222';
+    third.style.cursor = 'pointer';
+  }
+  if(answers.questionFour){
+    fourth.style.color = '#222';
+    fourth.style.cursor = 'pointer';
+  }
+  if(answers.questionFive){
+    fifth.style.color = '#222';
+    fifth.style.cursor = 'pointer';
+  }
+  if(answers.questionSix){
+    sixth.style.color = '#222';
+    sixth.style.cursor = 'pointer';
+  }
 }
-
 
 function reviewValues(){
   setReviewColorPlaceholderBackground();
@@ -17,7 +54,7 @@ function reviewValues(){
   formReview.querySelector('#reviewName').value = answers.questionOne;
   formReview.querySelector('#reviewEmail').value = answers.questionTwo;
   var websitePriorities = formReview.getElementsByClassName('reviewPriorities');
-  console.log(websitePriorities);
+  // console.log(websitePriorities);
   for(var i = 0; i < websitePriorities.length; i++){
     if (websitePriorities[i].value === answers.questionThree){
       websitePriorities[i].setAttribute('checked', 'checked');
@@ -29,6 +66,12 @@ function reviewValues(){
   formReview.querySelector('#reviewBudget').value = answers.questionSix;
 }
 
+function pageNumber(number){
+  var current = document.querySelector('.current');
+  current.innerHTML = number;
+}
+
+pageNumber(1);
 
 function formNavigation() {
   //find current active element
@@ -40,15 +83,17 @@ function formNavigation() {
     if(validateName()){
       answers.questionOne = item.querySelector('#fullName').value;
       item.classList.remove('active');
+      updateSideNavigation();
          // Check if another list element (question) exists
          if (item.nextElementSibling){
            item.nextElementSibling.classList.add('active');
+           pageNumber(2);
          }else{
           //  When we have no more questions we show the review page.
            var formReview = document.querySelector('#review');
            reviewValues();
            formReview.style.top = 0;
-          console.log('Done');
+          // console.log('Done');
         }
     }else{
       item.querySelector('#fullName').classList.add('required');
@@ -59,15 +104,17 @@ function formNavigation() {
     if(validateEmail()){
       answers.questionTwo = item.querySelector('#email').value;
       item.classList.remove('active');
+      updateSideNavigation();
          // Check if another list element (question) exists
          if (item.nextElementSibling){
            item.nextElementSibling.classList.add('active');
+           pageNumber(3);
          }else{
           //  When we have no more questions we show the review page.
            reviewValues();
            var formReview = document.querySelector('#review');
            formReview.style.top = 0;
-          console.log('Done');
+          // console.log('Done');
         }
     }else{
       item.querySelector('#email').classList.add('required');
@@ -84,15 +131,17 @@ function formNavigation() {
     }
 
     item.classList.remove('active');
+    updateSideNavigation();
     // Check if another list element (question) exists
     if (item.nextElementSibling){
       item.nextElementSibling.classList.add('active');
+      pageNumber(4);
     }else{
      //  When we have no more questions we show the review page.
       reviewValues();
       var formReview = document.querySelector('#review');
       formReview.style.top = 0;
-      console.log('Done');
+      // console.log('Done');
     }
 
   }
@@ -100,15 +149,17 @@ function formNavigation() {
   if (item.querySelector('#websiteColor') !== null) {
     answers.questionFour = item.querySelector('#websiteColor').value;
     item.classList.remove('active');
+    updateSideNavigation();
     // Check if another list element (question) exists
     if (item.nextElementSibling){
       item.nextElementSibling.classList.add('active');
+      pageNumber(5);
     }else{
      //  When we have no more questions we show the review page.
       reviewValues();
       var formReview = document.querySelector('#review');
       formReview.style.top = 0;
-      console.log('Done');
+      // console.log('Done');
     }
 
   }
@@ -117,15 +168,17 @@ function formNavigation() {
     if(validateDesc()){
       answers.questionFive = item.querySelector('#websiteDesc').value;
       item.classList.remove('active');
+      updateSideNavigation();
          // Check if another list element (question) exists
          if (item.nextElementSibling){
            item.nextElementSibling.classList.add('active');
+           pageNumber(6);
          }else{
           //  When we have no more questions we show the review page.
            reviewValues();
            var formReview = document.querySelector('#review');
            formReview.style.top = 0;
-          console.log('Done');
+          // console.log('Done');
         }
     }else{
       item.querySelector('#websiteDesc').classList.add('required');
@@ -136,15 +189,17 @@ function formNavigation() {
     if(validateBudget()){
       answers.questionSix = item.querySelector('#budget').value;
       item.classList.remove('active');
+      updateSideNavigation();
          // Check if another list element (question) exists
          if (item.nextElementSibling){
            item.nextElementSibling.classList.add('active');
+           pageNumber(7);
          }else{
           //  When we have no more questions we show the review page.
            reviewValues();
            var formReview = document.querySelector('#review');
            formReview.style.top = 0;
-          console.log('Done');
+          // console.log('Done');
         }
     }else{
       item.querySelector('#budget').classList.add('required');
@@ -234,7 +289,7 @@ colorButton.addEventListener('click', function showColors(){
 reviewColorButton.addEventListener('click', function showReviewColors(){
 
   var choices = document.querySelector('#colorListing');
-  console.log(choices);
+  // console.log(choices);
   choices.style.top = 0;
   choices.style.left = 0;
   choices.style.right = 0;
@@ -248,7 +303,7 @@ function saveData(event){
   event.target = event.target || event.srcElement;
   var element = event.target;
 
-  console.log(element.id);
+  // console.log(element.id);
   if(element.id === 'review'){
     var reviewForm = document.querySelector('#review');
     answers.questionOne = reviewForm.querySelector('#reviewName').value;
@@ -264,12 +319,73 @@ function saveData(event){
     answers.questionFour = reviewForm.querySelector('#reviewWebsiteColor').value;
     answers.questionFive = reviewForm.querySelector('#reviewDesc').value;
     answers.questionSix = reviewForm.querySelector('#reviewBudget').value;
-    alert(answers);
-    window.location = "thankyou.html";
+    console.log(answers);
+    // window.location = "thankyou.html";
   }
   // var reviewForm = document.querySelector('#review');
 
 }
+
+navOne.addEventListener('click', function(){
+  if(answers.questionOne){
+
+          var currentActive = document.querySelector('li.active');
+          var questionOne = document.querySelector('.question-one');
+          currentActive.classList.remove('active');
+          questionOne.classList.add('active');
+        }
+});
+
+navTwo.addEventListener('click', function(){
+  if(answers.questionTwo){
+
+          var currentActive = document.querySelector('li.active');
+          var questionTwo = document.querySelector('.question-two');
+          currentActive.classList.remove('active');
+          questionTwo.classList.add('active');
+        }
+});
+
+navThree.addEventListener('click', function(){
+  if(answers.questionThree){
+
+          var currentActive = document.querySelector('li.active');
+          var questionThree = document.querySelector('.question-three');
+          currentActive.classList.remove('active');
+          questionThree.classList.add('active');
+        }
+});
+
+navFour.addEventListener('click', function(){
+  if(answers.questionFour){
+
+          var currentActive = document.querySelector('li.active');
+          var questionFour = document.querySelector('.question-four');
+          currentActive.classList.remove('active');
+          questionFour.classList.add('active');
+        }
+});
+
+navFive.addEventListener('click', function(){
+  if(answers.questionFive){
+
+          var currentActive = document.querySelector('li.active');
+          var questionFive = document.querySelector('.question-five');
+          currentActive.classList.remove('active');
+          questionFive.classList.add('active');
+        }
+});
+
+navSix.addEventListener('click', function(){
+  if(answers.questionSix){
+
+          var currentActive = document.querySelector('li.active');
+          var questionSix = document.querySelector('.question-six');
+          currentActive.classList.remove('active');
+          questionSix.classList.add('active');
+        }
+});
+
 
 function handleColorClick(event){
 		event = event || window.event;
@@ -314,3 +430,4 @@ function handleColorClick(event){
   document.addEventListener('submit', saveData, true);
   document.addEventListener('click', handleColorClick, true);
   document.addEventListener('click', handleReviewColorClick, true);
+  // document.addEventListener('click', handleFirstNavClick, true);
